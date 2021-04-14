@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html,
 body {
   font-family: sans-serif, arial, helvetica;
@@ -35,27 +35,27 @@ p {
 }
 
 .tooltip.tooltiptext {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  .mat-icon {
+    color: #a71212;
+    font-size: 20px;
+  }
+  span {
+    visibility: hidden;
+    width: 180px;
+    background-color: #a71212;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 10px;
+    padding: 5px;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    .mat-icon {
-        color: #a71212;
-        font-size: 20px;
-    }
-    span {
-        visibility: hidden;
-        width: 180px;
-        background-color: #a71212;
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-        font-size: 10px;
-        padding: 5px;
-        position: absolute;
-        z-index: 1;
-        font-size: 12px;
-        text-transform: initial;
-    }
+    z-index: 1;
+    font-size: 12px;
+    text-transform: initial;
+  }
 }
 
 .tooltip:hover span {
@@ -63,13 +63,13 @@ p {
 }
 
 .required {
-    &:before {
-        content: '*';
-        position: absolute;
-        right: 4px;
-        top: 2px;
-        color: #a71212;
-    }
+  &:before {
+    content: "*";
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    color: #a71212;
+  }
 }
 .alert {
   padding: 20px;

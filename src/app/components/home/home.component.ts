@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HomeService } from 'src/app/services/home.service';
+import { HomeService } from '../../../app/services/home.service';
 import { FormGroup,  FormBuilder,  Validators, NgForm, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
