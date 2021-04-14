@@ -1,0 +1,9 @@
+a {
+    &.edit {
+        color: #444af9;
+    }
+    &.remove {
+        color: #a71212;
+    }
+    cursor: pointer;
+}

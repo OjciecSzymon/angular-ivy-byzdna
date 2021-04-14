@@ -1,0 +1,87 @@
+<div class="content">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                  <a (click)="changePage(1)" [ngClass]="{ 'active' : active == 1 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>1</span></div>
+                    Definition
+                  </a>
+                </li>
+                <li>
+                  <a (click)="changePage(2)" [ngClass]="{ 'active' : active == 2 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>2</span></div>
+                    Choose products
+                  </a>
+                </li>
+                <li>
+                  <a (click)="changePage(3)" [ngClass]="{ 'active' : active == 3 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>3</span></div>
+                    Exclude products
+                  </a>
+                </li>
+                <li [ngClass]="{ 'is-invalid': !access}">
+                  <a (click)="access && changePage(4)" [ngClass]="{ 'active' : active == 4 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>4</span></div>
+                    Bonus products
+                    <div class="tooltip tooltiptext">
+                      <mat-icon>info</mat-icon>
+                      <span>First fill in marketing name or technical names</span>
+                    </div>
+                  </a>
+                </li>
+                <li [ngClass]="{ 'is-invalid': !access }">
+                  <a (click)="access && changePage(5)" [ngClass]="{ 'active' : active == 5 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>5</span></div>
+                    Products limits
+                    <div class="tooltip tooltiptext">
+                      <mat-icon>info</mat-icon>
+                      <span>First fill in marketing name or technical names</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a (click)="changePage(6)" [ngClass]="{ 'active' : active == 6 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>6</span></div>
+                    Choose clients
+                  </a>
+                </li>
+                <li>
+                  <a (click)="changePage(7)" [ngClass]="{ 'active' : active == 7 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>7</span></div>
+                    Exclude clients</a>
+                </li>
+                <li>
+                  <a (click)="changePage(8)" [ngClass]="{ 'active' : active == 8 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>8</span></div>
+                    Clients limits
+                  </a>
+                </li>
+                <li>
+                  <a (click)="changePage(9)" [ngClass]="{ 'active' : active == 9 }" routerLinkActive="active">
+                    <div class="menu-icon"><span>9</span></div>
+                    Summary
+                  </a>
+                </li>
+            </ul>
+          </nav>
+    </header>
+    <div>
+        <section>
+            <app-definition *ngIf="active == 1"></app-definition>
+            <app-choose-products *ngIf="active == 2"></app-choose-products>
+            <app-exclude-products *ngIf="active == 3"></app-exclude-products>
+            <app-bonus-products *ngIf="active == 4"></app-bonus-products>
+            <app-products-limits *ngIf="active == 5"></app-products-limits>
+            <app-choose-clients *ngIf="active == 6"></app-choose-clients>
+            <app-exclude-clients *ngIf="active == 7"></app-exclude-clients>
+            <app-clients-limits *ngIf="active == 8"></app-clients-limits>
+            <app-summary *ngIf="active == 9"></app-summary>
+        </section>
+    </div>
+  </div>
+
+
+
+
+

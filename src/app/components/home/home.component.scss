@@ -1,0 +1,78 @@
+.is-invalid a {
+    background-color: #fbfbfb;
+    color: #dadada;
+    cursor: initial;
+    text-decoration: none;
+    .menu-icon {
+        background-color: #bbbbbb !important;
+        span {
+            color: #8e8d8d;
+        }
+    }
+  }
+
+.content {
+    display: flex;
+    header {
+        flex: 1;
+        nav {
+            flex: 1;
+            ul {
+                padding: 0;
+                margin: 0;
+                li {
+                    &.is-invalid {
+                        a {
+                            cursor: initial;
+                        }
+                    }
+                    &:last-of-type {
+                        border-bottom: 0;
+                    }
+                    background-color: #eee;
+                    list-style: none;
+                    border-bottom: 2px solid #fff;
+                    border-radius: 20px 0 0 20px;
+                    position: relative;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        user-select: none;
+                        border-right: 2px solid #fff;
+                        &.active {
+                            font-weight: 700;
+                            border-right: 0;
+                            div.menu-icon {
+                                background-color: #a71212;
+                            }
+                        }
+                        div.menu-icon {
+                            width: 50px;
+                            height: 50px;
+                            background-color: #4e4e4e;
+                            border-radius: 50%;
+                            display: flex;
+                            color: #fff;
+                            font-size: 18px;
+                            margin-right: 10px;
+                            span {
+                                margin: auto;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    > div {
+        background-color: #eee;
+        flex: 3;
+        section {
+
+        }
+    }
+}
+

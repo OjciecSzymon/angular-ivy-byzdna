@@ -1,0 +1,17 @@
+<ul>
+    <li *ngIf="marketingName != '' && marketingName != null">Marketing name: {{marketingName}}</li>
+    <li *ngIf="technicalName != '' && technicalName != null">Technical name: {{technicalName}}</li>
+    <li *ngIf="description != '' && description != null">Description: {{description}}</li>
+    <li *ngIf="portal != '' && portal != null">Portal: {{portal}}</li>
+    <li *ngIf="type != '' && type != null">Type: {{type}}</li>
+    <li *ngIf="benefit != '' && benefit != null">Benefit: {{benefit}}</li>
+    <li *ngIf="otherPromotions != '' && otherPromotions != null">Other promotions: {{otherPromotions}}</li>
+    <li *ngIf="backPromotion != '' && backPromotion != null">Back promotion: {{backPromotion}}</li>
+    <li *ngIf="startDate != '' && startDate != null && startDate != 'null'">Start date: {{startDate}}</li>
+    <li *ngIf="finishDate != '' && finishDate != null && finishDate != 'null'">Finish date: {{finishDate}}</li>
+</ul>
+<div *ngIf="messagesStatus"
+                    class="alert">
+                    <div *ngIf="messagesStatus">Fill in the required fields.</div>
+                </div>
+<button mat-raised-button color="primary" (click)="goToGrid()">Save</button>

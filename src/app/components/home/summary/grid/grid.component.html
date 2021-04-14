@@ -1,0 +1,20 @@
+<div>
+    <section>
+        <mat-table #table [dataSource]="dataSource">
+            <ng-container matColumnDef="marketingName">
+              <mat-header-cell *matHeaderCellDef> Marketing name </mat-header-cell>
+              <mat-cell *matCellDef="let item">{{ item.marketingName }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="edit">
+              <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+              <mat-cell *matCellDef="let item"><a routerLink="../home" [ngClass]="item.edit"><mat-icon>edit</mat-icon></a></mat-cell>
+            </ng-container>   
+            <ng-container matColumnDef="remove">
+              <mat-header-cell *matHeaderCellDef> Remove </mat-header-cell>
+              <mat-cell *matCellDef="let item"><a [ngClass]="item.remove" (click)="clearLocalStorage()"><mat-icon>clear</mat-icon></a></mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+    </section>
+</div>

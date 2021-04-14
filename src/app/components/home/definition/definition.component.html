@@ -1,0 +1,175 @@
+<div>
+    <form [formGroup]="form">
+        <section>
+            <div class="header">
+                <h3>Description</h3>
+                <span>* is required</span>
+            </div>
+            <div class="form-box">
+                <label class="required">
+                    <input type="text" formControlName="marketingName" placeholder="Marketing name" required
+                        (input)="checkFormValid(); saveFormValues('marketingName', controlsForm.marketingName.value)"
+                        [ngClass]="{ 'is-invalid': (controlsForm.marketingName.dirty || controlsForm.marketingName.touched) && controlsForm.marketingName.errors }">
+                    <div class="tooltip tooltiptext">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+
+                <div *ngIf="(controlsForm.marketingName.dirty || controlsForm.marketingName.touched) && controlsForm.marketingName.errors"
+                    class="invalid-feedback">
+                    <div *ngIf="controlsForm.marketingName.errors.required">Marketing name is required!</div>
+                </div>
+
+                <label>
+                    <input type="text" placeholder="Technical name" formControlName="technicalName" required
+                        (input)="checkFormValid(); saveFormValues('technicalName', controlsForm.technicalName.value)">
+                    <div class="tooltip tooltiptext">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+
+                <label>
+                    <textarea placeholder="Description" formControlName="description"
+                        (input)="checkFormValid(); saveFormValues('description', controlsForm.description.value)"></textarea>
+                    <div class="tooltip tooltiptext">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <h3>
+                    Catalog promotion tutorial:
+                </h3>
+            </div>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend nunc non mi suscipit,
+                    hendrerit imperdiet risus pellentesque.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Cras fermentum, justo vitae fringilla ullamcorper, arcu tortor viverra tellus, eget molestie nulla
+                    ex a erat.
+                    Nulla ut lectus turpis. In hac habitasse platea dictumst. Vestibulum ac consectetur justo.
+                    Suspendisse vulputate purus in elementum molestie.
+                    Vivamus ut diam leo. Praesent ut arcu ligula.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend nunc non mi suscipit,
+                    hendrerit imperdiet risus pellentesque.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Cras fermentum, justo vitae fringilla ullamcorper, arcu tortor viverra tellus, eget molestie nulla
+                    ex a erat.
+                    Nulla ut lectus turpis. In hac habitasse platea dictumst. Vestibulum ac consectetur justo.
+                    Suspendisse vulputate purus in elementum molestie.
+                    Vivamus ut diam leo. Praesent ut arcu ligula.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend nunc non mi suscipit,
+                    hendrerit imperdiet risus pellentesque.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Cras fermentum, justo vitae fringilla ullamcorper, arcu tortor viverra tellus, eget molestie nulla
+                    ex a erat.
+                    Nulla ut lectus turpis. In hac habitasse platea dictumst. Vestibulum ac consectetur justo.
+                    Suspendisse vulputate purus in elementum molestie.
+                    Vivamus ut diam leo. Praesent ut arcu ligula.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="header">
+                <h3>Conditions</h3>
+                <span>* is required</span>
+            </div>
+            <div class="form-box">
+                <label class="required">
+                    <select placeholder="Portal" formControlName="portal" [value]='defaultPortalSelectValue'
+                        (input)="checkFormValid(); saveFormValues('portal', $event)">
+                        <option value="0">Portal</option>
+                        <option value="1">Portal 2</option>
+                    </select>
+                    <div class="tooltip tooltiptext left">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+                <label class="required">
+                    <select placeholder="Type" formControlName="type" [value]='defaultTypeSelectValue'
+                        (input)="checkFormValid(); saveFormValues('type', $event)">
+                        <option [ngValue]="null" disabled>Typ</option>
+                        <option value="1">Typ 1</option>
+                        <option value="2">Typ 2</option>
+                    </select>
+                    <div class="tooltip tooltiptext left">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+                <label>
+                    <input type="number" placeholder="Benefit amount" formControlName="benefit"
+                        (input)="checkFormValid(); saveFormValues('benefit', controlsForm.benefit.value)" />
+                    <div class="tooltip tooltiptext left">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </label>
+
+                <div class="mat-form-box">
+                    <mat-form-field class="required" color="accent" appearance="fill">
+                        <mat-label>Start date</mat-label>
+                        <input data-input="date" matInput [matDatepicker]="picker1" formControlName="startDate"
+                            (dateChange)="checkFormValid(); saveFormValues('startDate', controlsForm.startDate.value)">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1 color="primary"></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Finish date</mat-label>
+                        <input data-input="date" matInput [matDatepicker]="picker2" formControlName="finishDate"
+                            (dateChange)="checkFormValid(); saveFormValues('finishDate', controlsForm.finishDate.value)">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                    </mat-form-field>
+                    <div class="tooltip tooltiptext left">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </div>
+                <div class="radio-box">
+                    <label><input type="radio" name="radio" value="0" formControlName="radio"
+                            (change)="checkFormValid(); saveFormValues('radio', controlsForm.radio.value)">Bussinsess
+                        conditions</label>
+                    <label><input type="radio" name="radio" value="1" formControlName="radio"
+                            (change)="checkFormValid(); saveFormValues('radio', controlsForm.radio.value)">Base price
+                        100%</label>
+                    <div class="tooltip tooltiptext left">
+                        <mat-icon>info</mat-icon>
+                        <span>Lorem ipsum dolor sit amet</span>
+                    </div>
+                </div>
+                <div class="checkbox-box">
+                    <label>
+                        <input type="checkbox" name="otherPromotions" formControlName="otherPromotions"
+                            (change)="checkFormValid(); saveFormValues('otherPromotions', controlsForm.otherPromotions.value)">Content
+                        with other promotions
+                        <div class="tooltip tooltiptext left">
+                            <mat-icon>info</mat-icon>
+                            <span>Lorem ipsum dolor sit amet</span>
+                        </div>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="backPromotion" formControlName="backPromotion"
+                            (change)="checkFormValid(); saveFormValues('backPromotion', controlsForm.backPromotion.value)">
+                            Back promotion
+                            <div class="tooltip tooltiptext left">
+                                <mat-icon>info</mat-icon>
+                                <span>Lorem ipsum dolor sit amet</span>
+                            </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
